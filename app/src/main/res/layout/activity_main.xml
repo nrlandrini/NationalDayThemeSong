@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#FFDEDE"
+    android:padding="10dp">
+
+    <FrameLayout
+        android:layout_width="366dp"
+        android:layout_height="122dp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="120dp"
+            android:layout_height="117dp"
+            app:srcCompat="@drawable/cutemusic" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="222dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/header"
+            android:textColor="#937DC2"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:layout_marginTop="5dp"
+        android:background="#937DC2"
+        android:layout_marginBottom="13dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="333dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="#C689C6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:hint="Home"
+            android:inputType="textPersonName"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/singer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/singer"
+            android:textColor="#C689C6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etSinger"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:hint="Aisyah Aiz"
+            android:inputType="textPersonName"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/year"
+            android:textColor="#C689C6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etYear"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:hint="2010"
+            android:inputType="number"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rating"
+            android:textColor="#C689C6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numStars="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="@string/insert" />
+
+        <Button
+            android:id="@+id/btnList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="@string/list" />
+    </LinearLayout>
+
+
+</LinearLayout>

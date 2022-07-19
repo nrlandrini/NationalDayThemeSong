@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">National Day Theme Song</string>
+    <string name="header">NDP SONGS </string>
+    <string name="title">Song Title</string>
+    <string name="singer">Singer</string>
+    <string name="year">Year Released</string>
+    <string name="rating">Rating</string>
+    <string name="insert">Insert</string>
+    <string name="list">Show List</string>
+    <string name="show5">Show All Songs With 5 Stars</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="editsong">Edit Song</string>
+    <string name="id">Song ID</string>
+
+</resources>
