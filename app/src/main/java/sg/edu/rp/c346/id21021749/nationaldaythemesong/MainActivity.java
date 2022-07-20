@@ -21,11 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etTitle, etSinger, etYear;
     Button btnInsert, btnList;
-    RadioGroup radioGroup;
-    TextView tvTitle, tvSinger, tvYear, tvRating;
-    RatingBar ratingBar;
-    ArrayList<song> al;
-    ArrayAdapter<song> aa;
+    RadioGroup rgRatings;
+    ArrayList<song> alSong;
+    ArrayAdapter<song> aaSong;
 
 
 
@@ -38,15 +36,12 @@ public class MainActivity extends AppCompatActivity {
         etYear = findViewById(R.id.etYear);
         btnInsert = findViewById(R.id.btnInsert);
         btnList = findViewById(R.id.btnList);
-        ratingBar = findViewById(R.id.ratingBar);
+        rgRatings = findViewById(R.id.rGButton);
 
 
-        ratingBar.setNumStars(5);
-
-
-        aa = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, al);
-        al = new ArrayList<>();
+        aaSong = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, alSong);
+        alSong = new ArrayList<>();
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,19 +50,32 @@ public class MainActivity extends AppCompatActivity {
                 String title = etTitle.getText().toString();
                 String singers = etSinger.getText().toString();
                 int year = Integer.parseInt(etYear.getText().toString());
-                int ratings = Math.round(ratingBar.getRating());
+                int ratings = rgRatings.getCheckedRadioButtonId();
+                String numStars = "";
 
+                if (rgRatings == findViewById(R.id.radioButton1)) {
+                    numStars = "*";
+                } else if (rgRatings == findViewById(R.id.radioButton2)) {
+                    numStars = "**";
+                } else if (rgRatings == findViewById(R.id.radioButton3)) {
+                    numStars = "***";
+                } else if (rgRatings == findViewById(R.id.radioButton4)) {
+                    numStars = "****";
+                } else {
+                    numStars = "*****";
+                }
                 long inserted_id = dbh.insertSong(title,singers,year,ratings);
                 if (inserted_id != -1){
-                    al.clear();
-                    al.addAll(dbh.getAllSongs());
-                    aa.notifyDataSetChanged();
+                    alSong.clear();
+                    alSong.addAll(dbh.getAllSongs());
+                    aaSong.notifyDataSetChanged();
                     Toast.makeText(MainActivity.this, "Song added is successful",
                             Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(MainActivity.this, "Song is unable to be added",
                             Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 
