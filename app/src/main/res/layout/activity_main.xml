@@ -97,7 +97,7 @@
             android:layout_height="56dp"
             android:ems="10"
             android:hint="2010"
-            android:inputType="number"
+            android:inputType="textPersonName"
             android:textStyle="italic" />
 
         <TextView
@@ -123,35 +123,35 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/radioButton1"
+                android:id="@+id/rb1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="1" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rb2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="2" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rb3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="3" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rb4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="4" />
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/rb5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -34,17 +34,29 @@ public class CustomAdapter extends ArrayAdapter {
 
 
         // Obtain the UI components and do the necessary binding
-        TextView tvToDo = rowView.findViewById(R.id.tvToDo);
-        TextView tvDate = rowView.findViewById(R.id.tvDate);
+        TextView tvTitle = rowView.findViewById(R.id.tvTitle);
+        TextView tvSinger = rowView.findViewById(R.id.tvSinger);
+        TextView tvYear = rowView.findViewById(R.id.tvStar);
+        TextView tvStar = rowView.findViewById(R.id.tvSinger);
 
         // Obtain the Android Version information based on the position
-        ToDoItem currentVersion = versionList.get(position);
+        song currentVersion = versionList.get(position);
 
         // Set values to the TextView to display the corresponding information
-        tvToDo.setText(currentVersion.getItem());
-        tvDate.setText(currentVersion.toString());
+        tvTitle.setText(currentVersion.getTitle());
+        tvSinger.setText(currentVersion.getSingers());
+        tvYear.setText(currentVersion.getYear());
+
+        String star = "";
+        if (currentVersion.getRating() == 1) { star = "*"; }
+        else if (currentVersion.getRating() == 2) { star = "**"; }
+        else if (currentVersion.getRating() == 3) { star = "***"; }
+        else if (currentVersion.getRating() == 4) { star = "****"; }
+        else if (currentVersion.getRating() == 5) { star = "*****"; }
+        tvStar.setText(star);
 
         return rowView;
     }
 
 }
+

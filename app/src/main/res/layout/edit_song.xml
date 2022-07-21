@@ -29,7 +29,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="333dp"
+        android:layout_height="351dp"
         android:orientation="vertical">
 
         <TextView
@@ -39,16 +39,16 @@
             android:text="@string/id"
             android:textColor="#C689C6"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/etID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="2"
             android:inputType="number"
-            android:textStyle="italic"
-            android:hint="2" />
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/title"
@@ -113,11 +113,53 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rgNewButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1" />
+
+            <RadioButton
+                android:id="@+id/star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2" />
+
+            <RadioButton
+                android:id="@+id/star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3" />
+
+            <RadioButton
+                android:id="@+id/star4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4" />
+
+            <RadioButton
+                android:id="@+id/star5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5" />
+        </RadioGroup>
     </LinearLayout>
 
     <LinearLayout

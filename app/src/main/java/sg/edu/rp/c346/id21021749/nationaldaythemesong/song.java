@@ -27,24 +27,33 @@ public class song implements Serializable {
         return title;
     }
     public String getSingers() {
+
         return singers;
     }
     public int getYear() {
+
         return year;
     }
     public int getRating() {
+
         return rating;
     }
-    public String setTitle(String toString) {
+    public String setTitle(String title) {
 
         return title;
     }
-    public String setSinger(String toString) {
+    public String setSinger(String singers) {
+
         return singers;
     }
 
     public int setYear(String toString) {
+
         return year;
+    }
+
+    public int setRating (int rating) {
+        return rating;
     }
 
     @Override

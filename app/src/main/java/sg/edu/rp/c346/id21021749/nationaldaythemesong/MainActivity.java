@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rgRatings;
     ArrayList<song> alSong;
     ArrayAdapter<song> aaSong;
+    RadioButton rb1, rb2, rb3, rb4, rb5,rb;
+    song data;
+    ListView lv;
 
 
 
@@ -31,17 +35,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent y = getIntent();
         etTitle = findViewById(R.id.etTitle);
         etSinger = findViewById(R.id.etSinger);
         etYear = findViewById(R.id.etYear);
         btnInsert = findViewById(R.id.btnInsert);
         btnList = findViewById(R.id.btnList);
         rgRatings = findViewById(R.id.rGButton);
+        rb1 = findViewById(R.id.rb1);
+        rb2 = findViewById(R.id.rb2);
+        rb3 = findViewById(R.id.rb3);
+        rb4 = findViewById(R.id.rb4);
+        rb5 = findViewById(R.id.rb5);
+        lv = findViewById(R.id.lvSongs);
+        data = (song) y.getSerializableExtra("data");
 
 
-        aaSong = new ArrayAdapter<>(this,
+        aaSong = new ArrayAdapter<song>(this,
                 android.R.layout.simple_list_item_1, alSong);
-        alSong = new ArrayList<>();
+        alSong = new ArrayList<song>();
+        lv.setAdapter(aaSong);
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,19 +65,13 @@ public class MainActivity extends AppCompatActivity {
                 String singers = etSinger.getText().toString();
                 int year = Integer.parseInt(etYear.getText().toString());
                 int ratings = rgRatings.getCheckedRadioButtonId();
-                String numStars = "";
+                rb = findViewById(ratings);
+                int rating = Integer.parseInt(rb.getText().toString());
+                Log.d("result",rating+"");
+                Log.d("result",ratings+"");
 
-                if (rgRatings == findViewById(R.id.radioButton1)) {
-                    numStars = "*";
-                } else if (rgRatings == findViewById(R.id.radioButton2)) {
-                    numStars = "**";
-                } else if (rgRatings == findViewById(R.id.radioButton3)) {
-                    numStars = "***";
-                } else if (rgRatings == findViewById(R.id.radioButton4)) {
-                    numStars = "****";
-                } else {
-                    numStars = "*****";
-                }
+
+
                 long inserted_id = dbh.insertSong(title,singers,year,ratings);
                 if (inserted_id != -1){
                     alSong.clear();
